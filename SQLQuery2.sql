@@ -8,5 +8,3 @@ FROM 'D:\Jupyter\Portifólio Análise de dados\Projeto Airbnb\Airbnb.csv'
 WITH(
 FIELDTERMINATOR = '|',
 CODEPAGE = '65001')
-
-SELECT * FROM AirBnb
