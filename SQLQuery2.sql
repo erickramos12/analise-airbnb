@@ -16,7 +16,7 @@ CODEPAGE = '65001')*/
 
 -- CRIANDO VIEW PARA LEVAR OS DADOS AO POWER BI
 
-CREATE OR ALTER VIEW AirBnbPBI
+/*CREATE OR ALTER VIEW AirBnbPBI
 AS
 SELECT
 	host_name AS 'Nome do Anfitrião',
@@ -52,4 +52,9 @@ SELECT
 	Ano,
 	Mes AS 'Mês'
 FROM
-	AirBnb
+	AirBnb*/
+
+
+DELETE FROM AirBnb WHERE neighbourhood IS NULL
+
+SELECT * FROM AirBnbPBI WHERE [Tempo Médio de Resposta] IS NOT NULL
