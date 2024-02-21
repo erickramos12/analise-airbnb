@@ -44,11 +44,7 @@ SELECT
 	guests_included AS 'Quantidade Máxima de Pessoas',
 	extra_people AS 'Valor por Pessoa Extra',
 	REPLACE(REPLACE(has_availability, 'f', 'Não'), 't', 'Sim') AS 'Disponível?',
-	number_of_reviews AS 'Quantidade de Review',
-	IIF(first_review IS NOT NULL, 'Sim', 'Não') AS 'Teve Review?',
-	review_scores_accuracy AS 'Nota do Review',
 	cancellation_policy AS 'Política de Cancelamento',
-	reviews_per_month AS 'Quantidade de Review po Mês',
 	Ano,
 	Mes AS 'Mês'
 FROM
@@ -58,3 +54,5 @@ FROM
 DELETE FROM AirBnb WHERE neighbourhood IS NULL
 
 SELECT * FROM AirBnbPBI WHERE [Tempo Médio de Resposta] IS NOT NULL
+
+SELECT * FROM AirBnbPBI
