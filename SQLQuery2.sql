@@ -9,7 +9,7 @@ BULK INSERT AirBnb
 FROM 'D:\Jupyter\Portifólio Análise de dados\Projeto Airbnb\Airbnb.csv'
 WITH(
 FIELDTERMINATOR = '|',
-CODEPAGE = '65001')*/
+CODEPAGE = '65001')
 
 
 
@@ -56,3 +56,38 @@ DELETE FROM AirBnb WHERE neighbourhood IS NULL
 SELECT * FROM AirBnbPBI WHERE [Tempo Médio de Resposta] IS NOT NULL
 
 SELECT * FROM AirBnbPBI
+
+
+-- Criando View para usar no Python (Machine Learning)
+
+
+CREATE OR ALTER VIEW AirBnbPY
+AS
+SELECT
+	host_is_superhost AS 'Superhost?',
+	host_listings_count AS 'Total de Apartamentos',
+	latitude AS Latitude,
+	longitude AS Longitude,
+	property_type AS 'Tipo da Propriedade',
+	room_type AS 'Tipo do Quarto',
+	accommodates AS 'Quantidade de Benefícios',
+	bathrooms AS 'Quantidade de Banheiros',
+	bedrooms AS 'Quantidade de Quartos',
+	beds AS 'Quantidade de Camas',
+	bed_type AS 'Tipo da Cama',
+	amenities AS 'Bônus',
+	price AS 'Preço',
+	security_deposit AS 'Depósito de Segurança',
+	guests_included AS 'Quantidade Máxima de Pessoas',
+	extra_people AS 'Valor por Pessoa Extra',
+	minimum_nights AS 'Quantidade Mínima de Noites',
+	maximum_nights AS 'Quantidade Máxima de Noites',
+	number_of_reviews AS 'Quantidade de Reviews',
+	instant_bookable AS 'Reserva Instantânea',
+	cancellation_policy AS 'Política de Cancelamento',
+	Ano,
+	Mes AS 'Mês'
+FROM 
+	AirBnb
+
+SELECT * FROM AirBnbPY
